@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  username: brstate
+  password: gtgsd8568
+
+development:
+  <<: *default
+  database: brstate_dev
+
+test:
+  <<: *default
+  database: brstate_test
+
+production:
+  <<: *default
+  database: brstate_production
