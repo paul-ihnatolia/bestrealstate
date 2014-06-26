@@ -1,7 +1,22 @@
 #devise-sessions-controller {
+  h2 {
+    text-align: center;
+  }
+
   form#new_user {
+    margin-top: 30px;
+
+    .control-label-lg {
+      padding-top: 13px;
+    }
+
     .checkbox label[for="user_remember_me"] {
       padding: 0;
+    }
+
+    input[type="submit"] {
+      margin: 0 auto;
+      display: block;
     }
   }
 }
