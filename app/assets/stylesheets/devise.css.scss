@@ -1,0 +1,7 @@
+#devise-sessions-controller {
+  form#new_user {
+    .checkbox label[for="user_remember_me"] {
+      padding: 0;
+    }
+  }
+}
