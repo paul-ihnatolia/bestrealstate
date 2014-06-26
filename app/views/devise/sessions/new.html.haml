@@ -1,13 +1,14 @@
 %h2 Sign in
+
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form" }) do |f|
   .form-group
-    = f.label(:email, class: "col-sm-2 control-label", for: "user-email-field")
+    = f.label(:username, class: "col-sm-2 control-label", for: "user-name-field")
     .col-sm-10
-      = f.email_field(:email, autofocus: true, id: "user-email-field", class: "form-control", placeholder: "Your Email", type: "email")
+      = f.text_field(:username, autofocus: true, id: "user-name-field", class: "form-control", placeholder: "Username", type: "email")
   .form-group
     = f.label(:password, class: "col-sm-2 control-label", for: "user-password-field")
     .col-sm-10
-      = f.password_field(:password, autocomplete: "off", id: "user-password-field", class: "form-control", placeholder: "Your Password", type: "password")
+      = f.password_field(:password, autocomplete: "off", id: "user-password-field", class: "form-control", placeholder: "Password", type: "password")
   - if devise_mapping.rememberable?
     .form-group
       .col-sm-offset-2.col-sm-10
