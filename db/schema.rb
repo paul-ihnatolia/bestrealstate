@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626102320) do
+ActiveRecord::Schema.define(version: 20140626173723) do
+
+  create_table "realtors", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.text     "description"
+    t.string   "phone_number"
+    t.string   "email"
+    t.string   "adress"
+    t.string   "video_url"
+    t.string   "g_plus_profile"
+    t.string   "facebook_profile"
+    t.string   "twitter_profile"
+    t.string   "listings_url"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "encrypted_password",     default: "", null: false

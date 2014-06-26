@@ -1,0 +1,53 @@
+%h2 Create new realtor
+  
+= form_for [:admin, @realtor] do |f|
+  %div
+    = f.label :firstname
+    %br
+    = f.text_field :firstname
+  %div
+    = f.label :lastname
+    %br
+    = f.text_field :lastname
+  %div
+    = f.label :email
+    %br
+    = f.email_field :email
+  %div
+    = f.label :phone_number 
+    %br
+    = f.text_field :phone_number
+  %div
+    = f.label :adress
+    %br
+    = f.text_field :adress
+  %div
+    = f.label :description 
+    %br
+    = f.text_area :description
+  %div
+    = f.label :video_url 
+    %br
+    = f.text_field :video_url
+  %div
+    = f.label 'Link to G+ profile'
+    %br
+    = f.text_field :g_plus_profile
+  %div
+    = f.label 'Link to facebook profile'
+    %br
+    = f.text_field :facebook_profile
+  %div
+    = f.label 'Link to twitter profile'
+    %br
+    = f.text_field :twitter_profile
+  %div
+    = f.label 'Link to listings'
+    %br
+    = f.text_field :listings_url
+  %div
+    = f.label 'Avatar'
+    %br
+    = f.file_field :avatar
+  %div
+    = f.submit 'Create new realtor'

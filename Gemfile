@@ -8,6 +8,7 @@ gem 'thin'
 
 gem 'devise', '3.2.4'
 gem 'cancan'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 # Views#assets
 gem 'sass-rails', '~> 4.0.3'
