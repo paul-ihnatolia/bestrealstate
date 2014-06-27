@@ -30,3 +30,4 @@ public/system/*
 public/assets/*
 .rvm.*
 config/database.yml
+.directory
