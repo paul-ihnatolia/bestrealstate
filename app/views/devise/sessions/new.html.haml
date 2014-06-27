@@ -1,22 +1,23 @@
-.col-sm-offset-2.col-sm-10
-  %h2 Sign in
+.col-md-6.col-md-offset-2
+  .col-sm-offset-2.col-sm-10
+    %h2 Sign in
 
-= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form" }) do |f|
-  .form-group
-    = f.label(:username, class: "col-sm-2 control-label control-label-lg", for: "user-name-field")
-    .col-sm-10
-      = f.text_field(:username, autofocus: true, id: "user-name-field", class: "form-control input-lg", placeholder: "Username", type: "email")
-  .form-group
-    = f.label(:password, class: "col-sm-2 control-label control-label-lg", for: "user-password-field")
-    .col-sm-10
-      = f.password_field(:password, autocomplete: "off", id: "user-password-field", class: "form-control input-lg", placeholder: "Password", type: "password")
-  - if devise_mapping.rememberable?
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal", role: "form" }) do |f|
+    .form-group
+      = f.label(:username, class: "col-sm-2 control-label control-label-lg", for: "user-name-field")
+      .col-sm-10
+        = f.text_field(:username, autofocus: true, id: "user-name-field", class: "form-control input-lg", placeholder: "Username", type: "email")
+    .form-group
+      = f.label(:password, class: "col-sm-2 control-label control-label-lg", for: "user-password-field")
+      .col-sm-10
+        = f.password_field(:password, autocomplete: "off", id: "user-password-field", class: "form-control input-lg", placeholder: "Password", type: "password")
+    - if devise_mapping.rememberable?
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          .checkbox
+            %label
+              = f.check_box :remember_me
+              = f.label :remember_me
     .form-group
       .col-sm-offset-2.col-sm-10
-        .checkbox
-          %label
-            = f.check_box :remember_me
-            = f.label :remember_me
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit("Sign in", class: "btn btn-lg btn-danger btn-block", type: "submit")
+        = f.submit("Sign in", class: "btn btn-lg btn-danger btn-block", type: "submit")

@@ -27,10 +27,11 @@
             %span.icon-bar
           %a.navbar-brand{:href => "#"} INDIANA'S BEST REAL ESTATE AGENTS
 
-    .container
-      .row
-        .col-md-6.col-md-offset-2
-          = yield
+    .container-fluid
+      .row-fluid
+        .container
+          .row
+            = yield
 
     %footer
       %p &copy; Bestrealstate 2014
