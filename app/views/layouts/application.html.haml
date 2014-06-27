@@ -4,7 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %title= content_for?(:title) ? yield(:title) : "Bestrealstate"
+    %title= content_for?(:title) ? yield(:title) : "Indiana's Best Real Estate Agents"
     = csrf_meta_tags
     / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     / WARNING: Respond.js doesn't work if you view the page via file://
@@ -16,22 +16,23 @@
     = favicon_link_tag 'favicon.ico', rel: 'shortcut icon'
 
   %body{ id: "#{params[:controller].parameterize}-controller" }
-    %nav.navbar.navbar-default{:role => "navigation"}
+    %nav.navbar.navbar-inverse{ role: "navigation"}
       .container-fluid
         / Brand and toggle get grouped for better mobile display
         .navbar-header
-          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %button.navbar-toggle{ "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button" }
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} INDIANA'S BEST REAL ESTATE AGENTS
+          %a.navbar-brand{ href: "#" }
+            %span.white
+              INDIANA'S BEST
+            %span.red
+              REAL ESTATE AGENTS
 
-    .container-fluid
-      .row-fluid
-        .container
-          .row
-            = yield
+    .container-fluid#content-wrapper
+      = yield
 
     %footer
-      %p &copy; Bestrealstate 2014
+      %p &copy; BestRealEstate 2014
