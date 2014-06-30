@@ -1,59 +1,59 @@
 .row-fluid
   .container
     .row
-      .col-md-6.col-md-offset-2
-        .col-sm-offset-2.col-sm-10
+      .col-sm-8
+        .col-sm-8.col-sm-offset-4
           %h2 New realtor
 
-        = form_for([:admin, @realtor], html: { class: "form-horizontal", role: "form" }) do |f|
+        = form_for([:admin, @realtor], html: { class: "form-horizontal", id: "new-realtor", role: "form" }) do |f|
           .form-group
-            = f.label(:firstname, class: "col-sm-2 control-label control-label-lg", for: "firstname-field")
-            .col-sm-10
+            = f.label(:firstname, class: "col-sm-4 control-label control-label-lg", for: "firstname-field")
+            .col-sm-8
               = f.text_field(:firstname, autofocus: true, id: "firstname-field", class: "form-control input-lg", placeholder: "Firstname", type: "text")
           .form-group
-            = f.label(:lastname, class: "col-sm-2 control-label control-label-lg", for: "lastname-field")
-            .col-sm-10
+            = f.label(:lastname, class: "col-sm-4 control-label control-label-lg", for: "lastname-field")
+            .col-sm-8
               = f.text_field(:lastname, id: "lastname-field", class: "form-control input-lg", placeholder: "Lastname", type: "text")
           .form-group
-            = f.label(:email, class: "col-sm-2 control-label control-label-lg", for: "email-field")
-            .col-sm-10
+            = f.label(:email, class: "col-sm-4 control-label control-label-lg", for: "email-field")
+            .col-sm-8
               = f.email_field(:email, id: "email-field", class: "form-control input-lg", placeholder: "Email", type: "email")
           .form-group
-            = f.label(:phone_number, class: "col-sm-2 control-label control-label-lg", for: "phone-number-field")
-            .col-sm-10
+            = f.label(:phone_number, class: "col-sm-4 control-label control-label-lg", for: "phone-number-field")
+            .col-sm-8
               = f.text_field(:phone_number, id: "phone-number-field", class: "form-control input-lg", placeholder: "Phone Number", type: "text")
           .form-group
-            = f.label(:adress, class: "col-sm-2 control-label control-label-lg", for: "address-field")
-            .col-sm-10
-              = f.text_field(:adress, id: "address-field", class: "form-control input-lg", placeholder: "Address", type: "text")
+            = f.label(:address, class: "col-sm-4 control-label control-label-lg", for: "address-field")
+            .col-sm-8
+              = f.text_field(:address, id: "address-field", class: "form-control input-lg", placeholder: "Address", type: "text")
           .form-group
-            = f.label(:description, class: "col-sm-2 control-label control-label-lg", for: "description-field")
-            .col-sm-10
+            = f.label(:description, class: "col-sm-4 control-label control-label-lg", for: "description-field")
+            .col-sm-8
               = f.text_field(:description, id: "description-field", class: "form-control input-lg", placeholder: "Description", type: "text")
           .form-group
-            = f.label(:video_url, class: "col-sm-2 control-label control-label-lg", for: "video-url-field")
-            .col-sm-10
+            = f.label(:video_url, class: "col-sm-4 control-label control-label-lg", for: "video-url-field")
+            .col-sm-8
               = f.text_field(:video_url, id: "video-url-field", class: "form-control input-lg", placeholder: "Video URL", type: "url")
           .form-group
-            = f.label('Link to G+ profile', class: "col-sm-2 control-label control-label-lg", for: "g-plus-profile-field")
-            .col-sm-10
+            = f.label('Link to G+ profile', class: "col-sm-4 control-label control-label-lg", for: "g-plus-profile-field")
+            .col-sm-8
               = f.text_field(:g_plus_profile, id: "g-plus-profile-field", class: "form-control input-lg", placeholder: "Link to G+ profile", type: "url")
           .form-group
-            = f.label('Link to facebook profile', class: "col-sm-2 control-label control-label-lg", for: "facebook-profile-field")
-            .col-sm-10
+            = f.label('Link to facebook profile', class: "col-sm-4 control-label control-label-lg", for: "facebook-profile-field")
+            .col-sm-8
               = f.text_field(:facebook_profile, id: "facebook-profile-field", class: "form-control input-lg", placeholder: "Link to facebook profile", type: "url")
           .form-group
-            = f.label('Link to twitter profile', class: "col-sm-2 control-label control-label-lg", for: "twitter-profile-field")
-            .col-sm-10
+            = f.label('Link to twitter profile', class: "col-sm-4 control-label control-label-lg", for: "twitter-profile-field")
+            .col-sm-8
               = f.text_field(:twitter_profile, id: "twitter-profile-field", class: "form-control input-lg", placeholder: "Link to twitter profile", type: "url")
           .form-group
-            = f.label('Link to listings', class: "col-sm-2 control-label control-label-lg", for: "listings-url-field")
-            .col-sm-10
+            = f.label('Link to listings', class: "col-sm-4 control-label control-label-lg", for: "listings-url-field")
+            .col-sm-8
               = f.text_field(:listings_url, id: "listings-url-field", class: "form-control input-lg", placeholder: "Link to listings", type: "url")
           .form-group
-            = f.label(:avatar, class: "col-sm-2 control-label control-label-lg", for: "avatar-field")
-            .col-sm-10
-              //= f.text_field(:avatar, id: "avatar-field", class: "form-control input-lg", placeholder: "Avatar", type: "text")
+            = f.label(:avatar, class: "col-sm-4 control-label control-label-lg", for: "avatar-field")
+            .col-sm-8
+              = f.text_field(:avatar, id: "avatar-field", class: "form-control input-lg", placeholder: "Avatar", type: "text")
           .form-group
-            .col-sm-offset-2.col-sm-10
+            .col-sm-offset-4.col-sm-8
               = f.submit("Create new realtor", class: "btn btn-lg btn-danger btn-block", type: "submit")

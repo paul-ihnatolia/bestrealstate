@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626173723) do
+ActiveRecord::Schema.define(version: 20140630121320) do
 
   create_table "realtors", force: true do |t|
     t.string   "firstname"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140626173723) do
     t.text     "description"
     t.string   "phone_number"
     t.string   "email"
-    t.string   "adress"
+    t.string   "address"
     t.string   "video_url"
     t.string   "g_plus_profile"
     t.string   "facebook_profile"
