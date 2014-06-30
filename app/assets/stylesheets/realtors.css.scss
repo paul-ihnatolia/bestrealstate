@@ -1,17 +1,67 @@
 #admin-realtors-controller {
   #search {
-    min-height: 300px;
+    min-height: 200px;
     background-color: #322036;
   }
 
   #info {
-    min-height: 300px;
+    min-height: 400px;
 
     .realtor {
+      padding: 16px 0 20px 0;
+      margin: 20px 0;
+      font-weight: bold;
+      border-bottom: 1px solid #F0F0F0;
+
       .personal {
+        .name {
+          font-size: 2em;
+          line-height: 1em;
+        }
+
+        .company {
+          color: #666666;
+        }
+
         .realtor-avatar {
           padding: 2px;
           background-color: #d9534f;
+          margin-top: -16px;
+        }
+      }
+
+      .location {
+        .line-1, .line-2 {
+          font-size: 1.2em;
+          color: #666666;
+        }
+      }
+
+      .contact {
+        .email, .phone {
+          font-size: 1.2em;
+          color: #666666;
+        }
+
+        .email {
+          color: #d9534f;
+        }
+      }
+
+      .admin-controls {
+        text-align: right;
+        font-weight: normal;
+      }
+
+      ul {
+        margin: 0;
+
+        li {
+          margin: 0;
+
+          p {
+            margin: 0;
+          }
         }
       }
     }
