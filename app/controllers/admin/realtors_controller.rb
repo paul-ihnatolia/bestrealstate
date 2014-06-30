@@ -4,8 +4,8 @@ class Admin::RealtorsController < ApplicationController
   end
 
   def create
-    @realtor = Realtor.new realtor_params 
-    
+    @realtor = Realtor.new realtor_params
+
     respond_to do |format|
       if @realtor.save
         flash[:message] = "Saved successfully."
