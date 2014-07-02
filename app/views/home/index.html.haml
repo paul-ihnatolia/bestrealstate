@@ -1,0 +1,28 @@
+.row-fluid#landing
+  .container
+    .social-links
+      %a{href: '#', :target=>'_blank'}
+        =image_tag('realestate_twitter.png', :style=>'height:30px')
+      %a{href: '#', :target=>'_blank'}
+        =image_tag('realestate_facebook.png', :style=>'height:30px')
+      %a{href: '#', :target=>'_blank'}
+        =image_tag('realestate_google_plus.png', :style=>'height:30px')
+    %br
+    .content
+      FIND THE BEST
+      %p
+        REAL ESTATE AGENT IN INDIA
+  .row-fluid#bottom
+    .search
+      = form_tag admin_realtors_path, method: :get do
+        = text_field_tag 'Search', nil, :placeholder => 'Search...', :autocomplete => 'off'
+        = submit_tag 'START HERE', class: 'btn btn-info', id: 'purple', name: nil
+
+
+.container-fluid#footer
+  .row
+    .col-sm-6.left
+      =image_tag('realestate_warranty.png')
+    .col-sm-6.right
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

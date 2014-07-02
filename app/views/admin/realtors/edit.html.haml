@@ -1,0 +1,21 @@
+.row-fluid#edit-realtor
+  .container
+    .row
+      .col-sm-8
+        .col-sm-8.col-sm-offset-4
+          %h2 Edit realtor
+        = render 'realtor_form'
+      .col-sm-4
+        %h2 Add testimonials
+        .form-group.textarea-wrapper
+          .col-sm-12
+            %textarea{ type: 'text', id: 'testimonial-edit-input', rows: '3', placeholder: 'New Testimonion...' }
+            %input#testimonial-name-input{ type: 'text', placeholder: 'Name'}
+            .col-sm-4.pull-right
+              = button_to 'Add', '#', id: 'add-edit-testimonials', 'data-realtor'=>"#{@realtor.id}", class: 'btn btn-success'
+        .clearfix
+        .testimonials-container-edit
+          -@realtor.testimonials.each do |testimonial|
+            = render partial: 'testimonial_item', locals: {testimonial: testimonial}
+
+= link_to 'Back', admin_realtors_path, class: 'btn btn-info back-button'

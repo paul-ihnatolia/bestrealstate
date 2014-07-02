@@ -1,0 +1,35 @@
+- realtors.each do |realtor|
+  .row.realtor
+    .col-sm-5.personal
+      .col-sm-3.avatar
+        = image_tag(realtor.avatar.url(:thumb), alt: "realtor", class: "realtor-avatar img-circle img-thumbnail")
+
+      %ul.col-sm-9.list-unstyled.show_user_profile{'data-realtor_id'=> realtor.id}
+        %li.name
+          %p
+            = realtor.firstname
+        %li.company
+          %p Company
+    .col-sm-3.location
+      .col-sm-1.location-mark.visible-md.visible-lg
+        = image_tag("location.png")
+      %ul.col-sm-10.list-unstyled
+        %li.line-1
+          %p
+            = realtor.city
+            ,
+        %li.line-2
+          %p
+            = realtor.address
+    .col-sm-3.contact
+      %ul.col-sm-12.list-unstyled
+        %li.email
+          %p
+            = realtor.email
+        %li.phone
+          %p
+            = realtor.phone_number
+    - if current_user && current_user.role == "admin"
+      .col-sm-1.admin-controls
+        = button_to 'Edit', edit_admin_realtor_path(realtor),method: :get, class: 'btn-warning btn-xs'
+        = button_to 'Destroy', admin_realtor_path(realtor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn-xs'

@@ -1,0 +1,7 @@
+.form-group.textarea-wrapper
+  .col-sm-12
+    %textarea{ type: 'text', id: 'testimonial-input', rows: '3', placeholder: 'New Testimonion...' }
+    %input#testimonial-name-input{ type: 'text', placeholder: 'Name'}
+    .col-sm-4.pull-right
+      = button_to 'Add', '#', id: 'add-testimonials', class: 'btn btn-success'
+  .clearfix

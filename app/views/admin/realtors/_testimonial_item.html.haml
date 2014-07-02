@@ -1,0 +1,20 @@
+.testimonial_edit_item
+  %div{ class: "show_edit_testtimonial#{testimonial.id}" }
+    %b Testimonion:
+    %p.text
+      = testimonial.text
+    %b Name: 
+    %p.name 
+      = testimonial.name
+  %div{ class: "edit_edit_testtimonial#{testimonial.id}" }
+    %textarea{rows: '3'}
+      = testimonial.text
+    %input.testimonials{value: "#{testimonial.name}"}
+  %a{ href:"#", class:"btn-sm btn-warning edit-edit", 'data-id'=>"#{testimonial.id}"}
+    Edit
+  %a{ href:"#", class:"btn-sm btn-danger delete-edit", 'data-id'=>"#{testimonial.id}"}
+    Delete
+  %a{ href:"#", class:"btn-sm btn-danger cancel-edit", 'data-id'=>"#{testimonial.id}"}
+    Cancel
+  %a{ href:"#", class:"btn-sm btn-success save-edit", 'data-id'=>"#{testimonial.id}"}
+    Save

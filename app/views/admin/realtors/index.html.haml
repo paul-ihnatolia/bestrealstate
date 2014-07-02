@@ -2,85 +2,57 @@
   .container
     .row
       .col-sm-12
-        %a.btn-danger.btn-lg#new-realtor-btn{ href: "realtors/new", role: "button" }
-          NEW REALTOR
-
+        .col-sm-6.form-wrapper
+          %form.navbar-form.navbar-left#search-form{role: "search"}
+            .input-group
+              %input.form-control{placeholder: "Search...", type: "text"}/
+              %span.input-group-btn
+                %button.btn.btn-danger{type: "submit"} SEARCH      
+        .col-sm-3.filter-wrapper
+          %select.form-control#select-search
+            %option{selected: "selected", value: "name"} Name
+            %option{value: "company"} Company
+            %option{value: "city"} City
+            %option{value: "email"} Email
+        - if current_user && current_user.role == "admin"
+          .col-sm-3.text-align-toggle.realtor-btn
+            %a.btn.btn-warning#new-realtor-btn{ href: "realtors/new", role: "button" }
+              NEW REALTOR
 .row-fluid#info
-  .container
-    .row.realtor
-      .col-sm-5.personal
-        .col-sm-3.avatar
-          = image_tag("avatar.png", size: "64", alt: "realtor", class: "realtor-avatar img-circle img-thumbnail")
-        %ul.col-sm-9.list-unstyled
-          %li.name
-            %p Name
-          %li.company
-            %p Company
-      .col-sm-3.location
-        %ul.col-sm-12.list-unstyled
-          %li.line-1
-            %p Indianapolis,
-          %li.line-2
-            %p Remote Village
-      .col-sm-3.contact
-        %ul.col-sm-12.list-unstyled
-          %li.email
-            %p email@realestate.com
-          %li.phone
-            %p +1 (234) 567-89-01
-      - if current_user && current_user.role == "admin"
-        .col-sm-1.admin-controls
-          %button.btn-warning.btn-xs Edit
-          %button.btn-danger.btn-xs Delete
+  .container.results
+    - @realtors.each do |realtor|
+      .row.realtor
+        .col-sm-4.personal
+          .col-sm-3.avatar
+            = image_tag(realtor.avatar.url(:thumb), alt: "realtor", class: "realtor-avatar img-circle img-thumbnail")
+          %ul.col-sm-9.list-unstyled.show_user_profile{'data-realtor_id'=> realtor.id}
+            %li.name
+              %p
+                = realtor.firstname
+            %li.company
+              %p 
+                = realtor.company
+          .clearfix
+        .col-sm-3.location
+          .col-sm-1.location-mark.visible-md.visible-lg
+            = image_tag("location.png")
+          %ul.col-sm-11.list-unstyled
+            %li.line-1
+              %p
+                = realtor.city + ','
+            %li.line-2
+              %p
+                = realtor.address
+        .col-sm-4.contact
+          %ul.col-sm-12.list-unstyled
+            %li.email
+              %p
+                = realtor.email
+            %li.phone
+              %p
+                = realtor.phone_number
+        - if current_user && current_user.role == "admin"
+          .col-sm-1.admin-controls
+            = button_to 'Edit', edit_admin_realtor_path(realtor),method: :get, class: 'btn-warning btn-xs'
+            = button_to 'Destroy', admin_realtor_path(realtor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn-xs'
 
-    .row.realtor
-      .col-sm-5.personal
-        .col-sm-3.avatar
-          = image_tag("avatar.png", size: "64", alt: "realtor", class: "realtor-avatar img-circle img-thumbnail")
-        %ul.col-sm-9.list-unstyled
-          %li.name
-            %p Name
-          %li.company
-            %p Company
-      .col-sm-3.location
-        %ul.col-sm-12.list-unstyled
-          %li.line-1
-            %p Indianapolis,
-          %li.line-2
-            %p Remote Village
-      .col-sm-3.contact
-        %ul.col-sm-12.list-unstyled
-          %li.email
-            %p email@realestate.com
-          %li.phone
-            %p +1 (234) 567-89-01
-      - if current_user && current_user.role == "admin"
-        .col-sm-1.admin-controls
-          %button.btn-warning.btn-xs Edit
-          %button.btn-danger.btn-xs Delete
-
-    .row.realtor
-      .col-sm-5.personal
-        .col-sm-3.avatar
-          = image_tag("avatar.png", size: "64", alt: "realtor", class: "realtor-avatar img-circle img-thumbnail")
-        %ul.col-sm-9.list-unstyled
-          %li.name
-            %p Name
-          %li.company
-            %p Company
-      .col-sm-3.location
-        %ul.col-sm-12.list-unstyled
-          %li.line-1
-            %p Indianapolis,
-          %li.line-2
-            %p Remote Village
-      .col-sm-3.contact
-        %ul.col-sm-12.list-unstyled
-          %li.email
-            %p email@realestate.com
-          %li.phone
-            %p +1 (234) 567-89-01
-      - if current_user && current_user.role == "admin"
-        .col-sm-1.admin-controls
-          %button.btn-warning.btn-xs Edit
-          %button.btn-danger.btn-xs Delete

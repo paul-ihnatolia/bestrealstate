@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630121320) do
+ActiveRecord::Schema.define(version: 20140701195557) do
 
   create_table "realtors", force: true do |t|
     t.string   "firstname"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20140630121320) do
     t.text     "description"
     t.string   "phone_number"
     t.string   "email"
+    t.string   "city"
     t.string   "address"
     t.string   "video_url"
+    t.string   "company"
     t.string   "g_plus_profile"
     t.string   "facebook_profile"
     t.string   "twitter_profile"
@@ -29,6 +31,15 @@ ActiveRecord::Schema.define(version: 20140630121320) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "testimonials", force: true do |t|
+    t.text     "text"
+    t.string   "name"
+    t.integer  "admin_id"
+    t.integer  "realtor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

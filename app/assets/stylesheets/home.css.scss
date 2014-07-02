@@ -1,0 +1,89 @@
+#home-controller{
+  background-color: white;
+  #landing {
+    background: asset_url('realestate_index.jpeg') no-repeat center center fixed;
+    height: 500px;
+    vertical-align: middle;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container {
+      width: 50%;
+      height: 100%;
+
+      .social-links {
+        margin-top: 5%;
+        text-align: center;
+      }
+      .content {
+        margin-top: 200px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        color: white;
+        p {
+          font-size: 30px;
+        }
+
+      }
+      @media screen and (max-width: 958px) {
+        .content {
+          margin-top: 100px;
+        }
+      }
+      @media screen and (max-width: 555px) {
+        .content {
+          margin-top: 150px;
+          font-size: 20px;
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    #bottom {
+      margin-top: -105px;
+      height: 100px;
+      text-align: center;
+      background-color: rgba(68, 49, 83, 0.5);
+      .search {
+        padding-top: 20px;
+
+        #Search {
+          margin-bottom: 10px;
+          height: 34px;
+          width: 300px;
+          border-radius: 2px;
+          background-color: white;
+          opacity: 0.5;
+          border: 0;
+        }
+        #purple {
+          margin-left: 20px;
+          background-color: #E1266A !important;
+          border: 0;
+          width: 150px;
+          height: 34px;
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+  #footer {
+    margin-top: 60px;
+    .left{
+      text-align: right;
+      width: 50%;
+      padding-right: 10%;
+    }
+    .right{
+      width: 50%;
+      p {
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: gray;
+      }
+    }
+  }
+}
+
+

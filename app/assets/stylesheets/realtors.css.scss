@@ -5,15 +5,81 @@
 
     .col-sm-12 {
       position: relative;
-      height: 100px;
+      min-height: 100px;
 
-      #new-realtor-btn {
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        margin-top: -21.5px; // 43 / 2
-        text-decoration: initial;
+      .realtor-btn {
+        padding-top: 33px;
       }
+    }
+
+    .form-wrapper {
+      padding-left: 0;
+
+      .navbar-form {
+        padding-left: 0;
+
+        .input-group {
+          // width: 17%;
+        }
+
+        .btn {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    #new-realtor-btn {
+      border-radius: 3px;
+      border-bottom: 3px solid #eea236;
+    }
+
+    .filter-wrapper {
+      margin-top: 33px;
+    }
+
+    #search-form {
+      margin-top: 33px;
+      border: none;
+      box-shadow: none;
+
+      input.form-control {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: none;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+      }
+
+      ::-webkit-input-placeholder { /* WebKit browsers */
+          color:    #FFF;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color:    #FFF;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color:    #FFF;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10+ */
+          color:    #FFF;
+      }
+
+      .btn {
+        padding-left: 23px;
+        padding-right: 23px;
+        border-radius: 3px;
+        border-bottom: 3px solid #5c2849;
+      }
+
+      select {
+        border-radius: 3px;
+        min-width: 180px;
+        box-shadow: 0;
+      }
+    }
+
+    .text-align-toggle {
+      text-align: right;
     }
   }
 
@@ -28,8 +94,8 @@
 
       .personal {
         .name {
-          font-size: 2em;
-          line-height: 1em;
+          font-size: 1.7em;
+          line-height: 0.9em;
         }
 
         .company {
@@ -39,7 +105,10 @@
         .realtor-avatar {
           padding: 2px;
           background-color: #d9534f;
-          margin-top: -16px;
+          margin-top: -17px;
+          width: 64px;
+          height: 64px;
+
         }
       }
 
@@ -47,6 +116,15 @@
         .line-1, .line-2 {
           font-size: 1.2em;
           color: #666666;
+        }
+
+        .location-mark {
+          margin-top: 17px;
+          padding-left: 0;
+
+          img {
+            margin-left: -5px;
+          }
         }
       }
 
@@ -68,6 +146,7 @@
 
       ul {
         margin: 0;
+        padding: 0;
 
         li {
           margin: 0;
@@ -77,6 +156,10 @@
           }
         }
       }
+    }
+
+    .personal, .avatar {
+      padding-left: 0; 
     }
   }
 
@@ -90,4 +173,148 @@
       padding-top: 13px;
     }
   }
+
+  .navbar-form .input-group .input-group-btn {
+    width: 17%;
+  }
 }
+
+#add-realtor {
+  textarea#testimonial-input {
+    width: 100%;
+    resize: vertical;
+  }
+
+  #add-testimonials {
+    float: right;
+    padding: 3px 15px;
+  }
+}
+
+#edit-realtor {
+  textarea#testimonial-edit-input {
+    width: 100%;
+    resize: vertical;
+  }
+
+  #add-edit-testimonials {
+    float: right;
+    padding: 3px 15px;
+  }
+}
+
+.textarea-wrapper {
+  .col-sm-12, .col-sm-4 {
+    padding: 0 !important;
+  }
+}
+
+.testimonials-container, .testimonials-container-edit {
+  a {
+    &.edit, &.cancel, &.edit-edit, &.cancel-edit {
+      margin-right: 7px;
+    } 
+  }
+}
+
+.testimonial_item, .testimonial_edit_item {
+  margin: 20px 0;
+
+  textarea {
+    width: 100%;
+    resize: vertical;
+  }
+
+  p.name {
+    display: inline-block;
+  }
+
+  input.testimonials {
+    margin-bottom: 10px;
+  }
+}
+
+//==============start media query================
+
+@media (max-width: 767px) {
+  #admin-realtors-controller {
+    #search {
+      .col-sm-12 {
+        .realtor-btn {
+          padding-top: 20px;
+          padding-bottom: 10px;
+        }
+      }
+
+      #search-form {
+        margin-top: 0;
+
+        select {
+          margin: 10px 0 0 0;
+        }
+      }
+
+      .text-align-toggle {
+        text-align: center;
+      }
+
+      .form-wrapper {
+        padding-left: 15px;
+
+        .navbar-form {
+          padding-left: 15px;
+
+          .input-group {
+            width: 100%;
+          }
+        }
+      }
+
+      .filter-wrapper {
+        margin-top: 0;
+      }
+    }
+
+    #info {
+      .personal {
+        padding-left: 15px; 
+
+        .avatar {
+          float: right;
+
+          .realtor-avatar {
+            margin-top: 0;
+          }
+        }  
+      }
+    }
+    
+    .navbar-brand {
+      padding: 15px !important;
+      span {
+        display: block;
+      }
+    }  
+
+    .admin-controls {
+      margin-top: 10px;
+      form {
+        display: inline-block;
+        input {
+          width: 80px;
+          padding: 5px;
+        }
+      }
+    }    
+  }
+}
+
+//==========end media query===============
+
+.testimonial_item .save, .testimonial_item .cancel, .testimonial_item textarea, .testimonial_item input{
+  display: none;
+}
+.testimonial_edit_item .save-edit, .testimonial_edit_item .cancel-edit, .testimonial_edit_item textarea, .testimonial_edit_item input{
+  display: none;
+}
+

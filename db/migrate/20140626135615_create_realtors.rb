@@ -6,8 +6,10 @@ class CreateRealtors < ActiveRecord::Migration
       t.text   :description
       t.string :phone_number
       t.string :email
-      t.string :adress
+      t.string :city
+      t.string :address
       t.string :video_url
+      t.string :company
       t.string :g_plus_profile
       t.string :facebook_profile
       t.string :twitter_profile
